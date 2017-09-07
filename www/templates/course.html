@@ -1,0 +1,75 @@
+
+<ion-view view-title="{{courses_name.name}}">
+	<ion-content>
+		
+			<ion-item >
+				<ion-grid>
+				<h3 style="color: rgb(65, 57, 185);">Professor</h3>
+					<div class="row">
+						 
+						 <div class="" style="border-color:rgb(65, 57, 185);  border-style: solid; border-width: 2px; height: 85px; width: 85px;" >
+								 <img ng-if="professor.picture != '' " style="width: 70px;height: 70px; margin: 5px;" ng-src="http://www.diazapps.com/{{professor.picture}}">
+								<img ng-if="professor.picture == '' " style="width: 70px;height: 70px; margin: 5px;" ng-src="img/null.png">
+						 </div>
+						<div style="width: 65%; ">
+							 <div class="col" ><label style="color: #575757;white-space: normal;    font-size: 30px;
+                                   ">{{professor.first_name}} </label>
+							 <label style="color: #575757; white-space: normal;    font-size: 30px;
+                                   ">{{professor.last_name}} </label></div>
+						</div>
+
+						  <div class=""><img style="height: 40px;     margin-top: 20px;
+" ng-src="img/megaphone.png" onClick="document.getElementById('audio_play').play(); return false;"></div>
+							<audio   ng-src="{{ professor.sound | diazapps }}" type="audio/mpeg" id="audio_play"></audio>
+					</div>
+				</ion-grid>	
+			</ion-item>
+
+			<ion-item >
+				<ion-grid>
+				<h3 style="color: rgb(65, 57, 185);">Teaching Assistant</h3>
+					<div class="row">
+						 <div style="border-color:rgb(65, 57, 185);  border-style: solid; border-width: 2px; height: 85px; width: 85px; ">
+						  <img ng-if="assistant.picture != '' " style="width: 70px;height: 70px; margin: 5px;" ng-src="http://www.diazapps.com/{{assistant.picture}}">
+						  <img ng-if="assistant.picture == '' || student.picture.indexOf('http') === 0 " style="width: 70px;height: 70px; margin: 5px;" ng-src="img/null.png">
+								</div>
+						<div style="width: 65%; ">
+								 <div class="col" ><label style="color: #575757;white-space: normal;    font-size: 30px;
+                                   ">{{assistant.first_name}} </label>
+								 <label style="color: #575757; white-space: normal;    font-size: 30px;
+                                   ">{{assistant.last_name}} </label></div>
+						</div>
+						 <div class=""><img style="height: 40px;     margin-top: 20px;
+" ng-src="img/megaphone.png" onClick="document.getElementById('audio_play2').play(); return false;"></div>
+							<audio   ng-src="{{ assistant.sound | diazapps }}" type="audio/mpeg" id="audio_play2"></audio>
+					</div>
+				</ion-grid>	
+			</ion-item>
+			<hr style="color: rgb(65, 57, 185);height: 1px; width: 50%">
+
+		<ion-list style="color: rgb(65, 57, 185);">	
+				<h4 style="font-size: 15px; padding-left:20px; color: rgb(65, 57, 185);">Students</h4>
+			<ion-item  ng-repeat="student in students" >
+				<ion-grid>
+					<div class="row">
+						<div style="border-color:rgb(65, 57, 185);  border-style: solid; border-width: 2px; height: 85px; width: 85px; ">
+						<img ng-if="student.picture != ''  " style="width: 70px;height: 70px; margin: 5px;" ng-src="http://www.diazapps.com/{{student.picture}}">
+						  <img ng-if="student.picture == '' || student.picture.indexOf('http') === 0 " style="width: 70px;height: 70px; margin: 5px;" ng-src="img/null.png">
+						  </div>
+						  <div style="width: 65%; ">
+							 <div class="col" style="" ><label style="color: #575757;white-space: normal;    font-size: 30px;
+                                   ">{{student.first_name}} </label>
+							<label style="color: #575757; white-space: normal;    font-size: 30px;
+                                   ">{{student.last_name}} </label></div>
+						 </div>
+						<div class="col"><img style="height: 40px;    margin-top: 20px;
+ " ng-src="img/megaphone.png" ng-click="playAudio({{$index}})"></div>
+							<audio   ng-src="{{ student.sound | diazapps }}" type="audio/mpeg" id="audio_play{{$index}}"></audio>
+					
+					</div>
+				</ion-grid>	
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
+

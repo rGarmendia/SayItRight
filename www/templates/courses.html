@@ -1,0 +1,17 @@
+<ion-view  view-title="My Courses">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="section in sections" >
+<ion-grid no-padding>
+    <ion-row>
+    <a href="#/app/courses/{{section.id_section}}">
+        <ion-col class="courses-list-title">{{section.name}} - </ion-col>
+        <ion-col class="courses-list-title">{{courses_name[$index].name}} </ion-col> 
+   </a>
+    </ion-row>
+</ion-grid>
+    
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

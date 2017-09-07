@@ -1,0 +1,39 @@
+
+<ion-view view-title="Settings">
+	<ion-content>
+	<ion-grid>
+		<img ng-if="user.picture != '' " style="width: 80%;height: 200px; margin: 5px;    border-radius: 50%;
+		margin-left: 10%;    margin-top: 70px;    margin-bottom: 40px;" ng-src="http://www.diazapps.com/{{user.picture}}">
+		<img ng-if="user.picture == '' " style="width: 70px;height: 70px; margin: 5px;     border-radius: 50%;
+		margin-left: 10%;    margin-bottom: 30px;    margin-bottom: 40px;" ng-src="img/null.png">
+	<div class="row">
+			<div class="col col-50"><h2 style="color:#888888;">Audio</h2></div>	
+		<div class="col"><img style="height: 40px; " ng-src="img/megaphone.png" onClick="document.getElementById('audio_play_settings').play(); return false;"></div>
+		<audio   ng-src="{{ user.sound | diazapps }}" type="audio/mpeg" id="audio_play_settings"></audio>
+		<div class="col"><img style="height: 40px; " ng-src="img/microphone.png" onClick="document.getElementById('audio_play_settings').play(); return false;"></div>
+		<div class="col"><img style="height: 40px; " ng-src="img/tablet.png" onClick="document.getElementById('audio_play_settings').play(); return false;"></div>
+	</div>
+	 <button class="button button-full button-energized" ng-click="addMedia()">
+      Add image
+    </button>
+    <button class="button button-full button-calm" ng-click="record()">
+      record
+    </button>
+    <button class="button button-full button-positive" ng-click="stop()">
+      stop
+    </button>
+    <button class="button button-full button-royal" ng-click="playback()">
+      play
+    </button>
+    <br><br>
+    <ion-scroll direction="x" style="height:200px; min-height: 200px; overflow: scroll; white-space: nowrap;">
+      <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" style="height:200px; padding: 5px 5px 5px 5px;"/>
+    </ion-scroll>
+
+			</div>
+
+	</div>
+	</ion-grid>
+	</ion-content>
+</ion-view>
+

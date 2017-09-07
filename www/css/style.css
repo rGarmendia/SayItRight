@@ -1,0 +1,59 @@
+/* Empty. Add your own CSS if you like */
+h2.post-title{
+	margin-top: 30px;
+}
+
+.item-avatar-right > img:first-child, .item-avatar-right .item-image, .item-avatar-right .item-content > img:first-child, .item-avatar-right .item-content .item-image {
+    position: absolute;
+    top: 42px;
+    right: 7px;
+    max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.item-thumbnail-left > img:first-child, .item-thumbnail-left .item-image, .item-thumbnail-left .item-content > img:first-child, .item-thumbnail-left .item-content .item-image {
+    position: absolute;
+    top: 26px;
+    left: 10px;
+    max-width: 80px;
+    max-height: 80px;
+    width: 100%;
+    height: 100%;
+}
+.item-avatar-right, .item-avatar-right .item-content {
+    min-height: 0px;
+}
+
+.nav-color{
+
+        background: rgb(65, 57, 185) !important;
+}
+
+.bar.bar-stable .title {
+     color: #111 !important; 
+}
+.bar-stable .button.button-clear {
+    color: #111;
+
+}
+
+.courses-list-title{
+    font-size: 90%;
+    color: dimgrey;
+}
+
+.img-menu{
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+
+}
+
+.name-font{
+
+   color: #575757;
+}
