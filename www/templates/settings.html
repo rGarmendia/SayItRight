@@ -1,11 +1,11 @@
-
+	
 <ion-view view-title="Settings">
 	<ion-content>
 	<ion-grid>
 		<img ng-if="user.picture != '' " style="width: 80%;height: 200px; margin: 5px;    border-radius: 50%;
-		margin-left: 10%;    margin-top: 70px;    margin-bottom: 40px;" ng-src="http://www.diazapps.com/{{user.picture}}">
+		margin-left: 10%;    margin-top: 70px;    margin-bottom: 40px;"  ng-click="addMedia()" ng-src="http://www.diazapps.com/{{user.picture}}">
 		<img ng-if="user.picture == '' " style="width: 70px;height: 70px; margin: 5px;     border-radius: 50%;
-		margin-left: 10%;    margin-bottom: 30px;    margin-bottom: 40px;" ng-src="img/null.png">
+		margin-left: 10%;    margin-bottom: 30px;    margin-bottom: 40px;" ng-click="addMedia()" ng-src="img/null.png">
 	<div class="row">
 			<div class="col col-50"><h2 style="color:#888888;">Audio</h2></div>	
 		<div class="col"><img style="height: 40px; " ng-src="img/megaphone.png" onClick="document.getElementById('audio_play_settings').play(); return false;"></div>
@@ -13,17 +13,18 @@
 		<div class="col"><img style="height: 40px; " ng-src="img/microphone.png" onClick="document.getElementById('audio_play_settings').play(); return false;"></div>
 		<div class="col"><img style="height: 40px; " ng-src="img/tablet.png" onClick="document.getElementById('audio_play_settings').play(); return false;"></div>
 	</div>
-	 <button class="button button-full button-energized" ng-click="addMedia()">
-      Add image
-    </button>
-    <button class="button button-full button-calm" ng-click="record()">
+	<input ng-model="audioName">
+    <button class="button button-full button-calm" on-hold="recordStart()" on-release="recordEnd()">
       record
     </button>
-    <button class="button button-full button-positive" ng-click="stop()">
+    <button class="button button-full button-positive" ng-click="stopRecord()">
       stop
     </button>
-    <button class="button button-full button-royal" ng-click="playback()">
+    <button class="button button-full button-royal" ng-click="play()">
       play
+    </button>
+     <button class="button button-full button-royal" ng-click="position()">
+      stop
     </button>
     <br><br>
     <ion-scroll direction="x" style="height:200px; min-height: 200px; overflow: scroll; white-space: nowrap;">

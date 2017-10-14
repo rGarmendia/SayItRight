@@ -3,21 +3,25 @@
     "version": "1.1.1",
     "description": "SayItRight: An Ionic project",
     "dependencies": {
+        "@ionic-native/media-capture": "^4.3.1",
         "angular-resource": "^1.6.4",
         "cordova-android": "^6.2.3",
-        "cordova-ios": "^4.4.0",
         "cordova-plugin-audio-recorder-api": "0.0.6",
         "cordova-plugin-camera": "^2.4.1",
         "cordova-plugin-compat": "^1.1.0",
         "cordova-plugin-file": "^4.3.3",
+        "cordova-plugin-file-transfer": "^1.6.3",
+        "cordova-plugin-filepath": "^1.1.0",
         "cordova-plugin-media": "^3.0.1",
         "cordova-plugin-media-capture": "^1.4.3",
+        "cordova-plugin-progressindicator": "git+https://github.com/pbernasconi/cordova-progressIndicator.git",
         "gulp": "^3.5.6",
         "gulp-concat": "^2.2.0",
         "gulp-minify-css": "^0.3.0",
         "gulp-rename": "^1.2.0",
         "gulp-sass": "^2.0.4",
-        "ionic-native": "^2.9.0"
+        "ionic-native": "^2.9.0",
+        "org.pbernasconi.progressindicator": "https://github.com/pbernasconi/cordova-progressIndicator.git"
     },
     "devDependencies": {
         "@ionic/cli-plugin-cordova": "1.6.2",
@@ -44,15 +48,13 @@
             "cordova-plugin-camera": {},
             "cordova-plugin-file": {},
             "cordova-plugin-audio-recorder-api": {},
-            "cordova-plugin-media-capture": {
-                "CAMERA_USAGE_DESCRIPTION": " ",
-                "MICROPHONE_USAGE_DESCRIPTION": " ",
-                "PHOTOLIBRARY_USAGE_DESCRIPTION": " "
-            }
+            "cordova-plugin-filepath": {},
+            "org.pbernasconi.progressindicator": {},
+            "cordova-plugin-file-transfer": {},
+            "cordova-plugin-media-capture": {}
         },
         "platforms": [
-            "android",
-            "ios"
+            "android"
         ]
     }
 }

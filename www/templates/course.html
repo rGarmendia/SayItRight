@@ -2,7 +2,7 @@
 <ion-view view-title="{{courses_name.name}}">
 	<ion-content>
 		
-			<ion-item >
+			<ion-item ng-click="play(professor.sound)">
 				<ion-grid>
 				<h3 style="color: rgb(65, 57, 185);">Professor</h3>
 					<div class="row">
@@ -25,7 +25,7 @@
 				</ion-grid>	
 			</ion-item>
 
-			<ion-item >
+			<ion-item ng-click="play(assistant.sound)">
 				<ion-grid>
 				<h3 style="color: rgb(65, 57, 185);">Teaching Assistant</h3>
 					<div class="row">
@@ -51,7 +51,7 @@
 				<h4 style="font-size: 15px; padding-left:20px; color: rgb(65, 57, 185);">Students</h4>
 			<ion-item  ng-repeat="student in students" >
 				<ion-grid>
-					<div class="row">
+					<div class="row" ng-click="play(student.sound)">
 						<div style="border-color:rgb(65, 57, 185);  border-style: solid; border-width: 2px; height: 85px; width: 85px; ">
 						<img ng-if="student.picture != ''  " style="width: 70px;height: 70px; margin: 5px;" ng-src="http://www.diazapps.com/{{student.picture}}">
 						  <img ng-if="student.picture == '' || student.picture.indexOf('http') === 0 " style="width: 70px;height: 70px; margin: 5px;" ng-src="img/null.png">
